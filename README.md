@@ -25,8 +25,13 @@ ISBN = read.nextInt();
 public void output()
 {
 System.out.println("\nTitle: "+Title);
+
 System.out.println("\nAuthor: "+Author);
+
 System.out.println("\nPublisher: "+Publisher);
+
 System.out.println("\nYear of Publish: "+Year of Publish);
+
 System.out.println("\nISBN: "+ISBN);
+
 }

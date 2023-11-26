@@ -1,37 +1,56 @@
-import java.util.Scanner;
-class Book
+import java.util.ArrayList;
 
-private String Title,Author,Publisher,Year of Publish,ISBN;
+public class Book {
+    private String title;
+    private String author;
+    private String publisher;
+    private int year;
+    private String ISBN;
 
-spublic void data_in()
-{
-Scanner read = new Scannert(System.in);
+    public Book(String title, String author, String publisher, int year, String ISBN) {
+        this.title = title;
+        this.author = author;
+        this.publisher = publisher;
+        this.year = year;
+        this.ISBN = ISBN;
+    }
 
-System.out.print("Enter the Title of the book: ");
-Title = read.nextLine();
+    public String getTitle() {
+        return title;
+    }
 
-System.out.print("Enter the Author of the book: ");
-Author = read.nextLine();
+    public String getAuthor() {
+        return author;
+    }
 
-System.out.print("Enter the Publisher of the book: ");
-Publisher = read.nextLine();
+    public String getPublisher() {
+        return publisher;
+    }
 
-System.out.print("Enter the Year of Publish of the book: ");
-Year of Publish = read.nextInt();
+    public int getYear() {
+        return year;
+    }
 
-System.out.print("Enter the ISBN of the book: ");
-ISBN = read.nextInt();
+    public String getISBN() {
+        return ISBN;
+    }
 }
-public void output()
-{
-System.out.println("\nTitle: "+Title);
 
-System.out.println("\nAuthor: "+Author);
+public class LibraryCatalog {
+    private ArrayList<Book> books;
 
-System.out.println("\nPublisher: "+Publisher);
+    public LibraryCatalog() {
+        books = new ArrayList<Book>();
+    }
 
-System.out.println("\nYear of Publish: "+Year of Publish);
+    public void addBook(Book book) {
+        books.add(book);
+    }
 
-System.out.println("\nISBN: "+ISBN);
-
+    public void displayBooks() {
+        System.out.println("Title\tAuthor\tPublisher\tYear\tISBN");
+        for (Book book : books) {
+            System.out.println(book.getTitle() + "\t" + book.getAuthor() + "\t" + book.getPublisher() + "\t" + book.getYear() + "\t" + book.getISBN());
+        }
+    }
 }
